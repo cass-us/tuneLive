@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom'; 
 
 const CLIENT_ID = "657f69850eff48b4bb582c97dd063b7e";
 const CLIENT_SECRET = "be29e4f98785470ea93991835f75435e";
@@ -10,7 +10,7 @@ const LatestMusic = () => {
   const [artists, setArtists] = useState([]);
 
   useEffect(() => {
-    // Fetch Spotify API token
+    
     const authParameters = {
       method: 'POST',
       headers: {
@@ -89,7 +89,7 @@ const LatestMusic = () => {
                   />
                 )}
                 <div>
-                  {/* Add a Link component to navigate to the ArtistAlbums page */}
+              
                   <Link to={`/artist/${artist.id}`} className="text-blue-500 hover:underline">
                     <h2 className="text-xl">{artist.name}</h2>
                   </Link>

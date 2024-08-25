@@ -5,13 +5,13 @@ const CLIENT_ID = "657f69850eff48b4bb582c97dd063b7e";
 const CLIENT_SECRET = "be29e4f98785470ea93991835f75435e";
 
 const ArtistAlbums = () => {
-  const { artistId } = useParams();  // Retrieve artistId from the URL
+  const { artistId } = useParams();  
   const [accessToken, setAccessToken] = useState("");
   const [albums, setAlbums] = useState([]);
-  const [sortOption, setSortOption] = useState('date'); // New state for sorting
+  const [sortOption, setSortOption] = useState('date'); 
 
   useEffect(() => {
-    // Fetch Spotify API token again or pass it down from a parent component
+
     const authParameters = {
       method: 'POST',
       headers: {
@@ -55,21 +55,21 @@ const ArtistAlbums = () => {
   const sortAlbums = (albums) => {
     return albums.sort((a, b) => {
       if (sortOption === 'date') {
-        return new Date(b.release_date) - new Date(a.release_date); // Sort by release date descending
+        return new Date(b.release_date) - new Date(a.release_date); 
       } else if (sortOption === 'popularity') {
-        return b.popularity - a.popularity; // Sort by popularity descending
+        return b.popularity - a.popularity; 
       }
       return 0;
     });
   };
 
-  const sortedAlbums = sortAlbums([...albums]); // Apply sorting function
+  const sortedAlbums = sortAlbums([...albums]); 
 
   return (
     <div className="bg-black bg-opacity-60 h-full flex flex-col justify-center items-center p-4">
       <h1 className="text-white text-2xl mb-4">Albums</h1>
 
-      {/* Sort Options */}
+    
       <div className="mb-4">
         <label htmlFor="sort" className="text-white mr-2">Sort by:</label>
         <select
@@ -96,7 +96,7 @@ const ArtistAlbums = () => {
                 />
               )}
               <p className="text-gray-400 text-sm">Release Date: {album.release_date}</p>
-              {/* Optionally display album popularity if available */}
+              {''}
               {album.popularity && <p className="text-gray-400 text-sm">Popularity: {album.popularity}</p>}
             </div>
           ))}
