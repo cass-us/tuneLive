@@ -100,7 +100,7 @@ const LatestMusic = () => {
             ))}
           </ul>
         ) : (
-          <p>No artists found.</p>
+        <p></p>
         )}
       </div>
     </div>
