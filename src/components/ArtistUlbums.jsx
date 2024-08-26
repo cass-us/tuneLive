@@ -102,7 +102,7 @@ const ArtistAlbums = () => {
           ))}
         </div>
       ) : (
-        <p className="text-white">No albums found for this artist.</p>
+    <p></p>
       )}
     </div>
   );
